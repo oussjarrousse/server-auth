@@ -75,6 +75,7 @@ class TestAuthAdminPasskeyTotpMailEnforce(HttpCase):
         # Enable passkey and set auth_admin_passkey_ignore_totp = True
         config["auth_admin_passkey_password"] = self.sysadmin_passkey
         config["auth_admin_passkey_ignore_totp"] = True
+        config["auth_admin_passkey_password_sha512_encrypted"] = False
 
         # Two-factor authentication enabled
         self.assertTrue(self.user.totp_enabled)
